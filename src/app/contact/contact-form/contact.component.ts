@@ -99,6 +99,7 @@ onUpdate(){
     })
   })
 }
+
   cancel(){
      window.location.reload();
   }

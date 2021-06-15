@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { CData } from 'src/app/service/contact.model';
-
 import { ContactService } from 'src/app/service/contact.service';
 
 @Component({
