@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Cardo Dalisay",
+      "email": "cardo.dalisay@probinsyano.com",
+      "phone": "09812817837"
+    },
+    {
+      "id": 2,
+      "name": "Myrna Dela Cruz",
+      "email": "myrna.ba.sahod@awit.com",
+      "phone": "09231823709"
+    },
+    {
+      "id": 3,
+      "name": "Queen Cy",
+      "email": "queen.cy@vitamins.com",
+      "phone": "09432234121"
+    },
+    {
+      "id": 4,
+      "name": "Lana Cruz",
+      "email": "lana.ba.cruz@php.com",
+      "phone": "09312313131"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

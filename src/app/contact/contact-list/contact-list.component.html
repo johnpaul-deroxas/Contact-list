@@ -1,0 +1,33 @@
+<hr>
+<h2> Contact List</h2>
+<table id="users">
+    <tr>
+      <th *ngFor = "let column of headers">
+        {{column}}
+      </th>
+    </tr>
+    <tr *ngFor = "let data of datas" >
+        <td 
+            routerLink="/view/{{data.id}}"
+            style="cursor: pointer">
+            {{data.id}}</td>
+
+        <td routerLink="/view/{{data.id}}"
+            style="cursor: pointer">
+            {{data.name}}</td>
+
+        <td routerLink="/view/{{data.id}}"
+            style="cursor: pointer">
+            {{data.email}}</td>
+
+        <td routerLink="/view/{{data.id}}"
+            style="cursor: pointer">
+            {{data.phone}}</td>
+
+        <div class="btn-group" role="group" aria-label="..." style="padding: 10px;">
+          <button (click)="onsendData(data)" type="button" class="btn btn-primary">Update</button>
+          <button (click)="onDelete(data)"type="button" class="btn btn-danger">Delete</button>
+        </div>
+    </tr>
+  </table>
+ 

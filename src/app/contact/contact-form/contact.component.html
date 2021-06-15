@@ -1,0 +1,47 @@
+<h2 *ngIf="!editMode"> Add Contact</h2>
+<h2 *ngIf="editMode"> Update Contact</h2>
+<div class="container" >
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
+            <div class="form-group" *ngIf="editMode">
+               <label for="id">Id</label>
+               <input [attr.disabled]="editMode ? true : null" placeholder="" type="text" id="id" class="form-control"formControlName="id">
+                 <span
+                      *ngIf="!signupForm.get('id').valid && signupForm.get('id').touched" class="help-block">
+                      <span *ngIf="signupForm.get('id').errors['required']">This field is required!</span>
+                 </span>
+              </div>
+            <div class="form-group">
+              <label for="name">Name </label>
+              <input  placeholder="Enter your name" type="text" id="name" class="form-control" formControlName="name">
+                <span
+                    *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" class="help-block">
+                    <span *ngIf="signupForm.get('name').errors['required']">This field is required!</span>
+                 </span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input placeholder="Enter your email address" type="email" id="email"  class="form-control" formControlName="email">
+               <span
+                     *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" class="help-block">Please enter a valid email!</span>
+            </div>
+          <div class="form-group">
+            <label for="phone">Contact</label>
+            <input placeholder="Enter your contact number" type="text" maxlength="11" pattern="[z0-9_]{10,11}" id="phone"  class="form-control" formControlName="phone">
+              <span
+                    *ngIf="!signupForm.get('phone').valid && signupForm.get('phone').touched" class="help-block">Only accept numbers up to 11
+             </span>
+          <br>
+          <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">{{editMode? 'Update': 'Add'}}</button>        
+          <span
+            *ngIf="!signupForm.valid && signupForm.touched"
+            class="help-block">Please enter valid data!</span>
+        </div>
+      </form>
+      </div>
+    </div>
+    <button (click)="cancel()" name="cancelbtn" class="btn btn-danger mt-2" type="submit" *ngIf="editMode">
+      Cancel</button>
+  </div>
+  <app-contact-list (sendData)="editData($event)" ></app-contact-list>
